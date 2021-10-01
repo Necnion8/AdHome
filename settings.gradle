@@ -1,0 +1,5 @@
+//include("N8Core")
+//project(":N8Core").projectDir = new File("X:\\開発・研究\\プログラミング (Java)\\projects\\BukkitPlugin\\N8Core")
+//
+//include("N8PageView")
+//project(":N8PageView").projectDir = new File("X:\\開発・研究\\プログラミング (Java)\\projects\\BukkitPlugin\\N8PageView")

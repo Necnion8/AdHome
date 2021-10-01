@@ -1,0 +1,66 @@
+name: AdHome
+version: @version@
+main: com.gmail.necnionch.myplugin.adhome.bukkit.AdHomePlugin
+api-version: "1.13"
+authors: [Necnion8]
+description: "Let's go home!"
+softdepend: ["Multiverse-Core", "WorldDisplayName", "LOWorldRegenerator"]
+
+commands:
+  adhome:
+    aliases: ["adh"]
+  home-teleport:
+    aliases: ["home"]
+  home-set:
+    aliases: ["sethome", "shome"]
+  home-delete:
+    aliases: ["delhome", "dhome"]
+  home-list:
+    aliases: ["listhome", "lshome", "lhome"]
+  home-info:
+    aliases: ["infohome", "ihome"]
+
+permissions:
+  # group (default)
+  adhome.group.default:
+    default: true
+    children:
+      adhome.command.home: true
+      adhome.command.sethome: true
+      adhome.command.deletehome: true
+      adhome.command.listhome: true
+      adhome.command.infohome: true
+  # group (admin)
+  adhome.group.admin:
+    default: op
+    children:
+      adhome.command.home: true
+      adhome.command.sethome: true
+      adhome.command.deletehome: true
+      adhome.command.listhome: true
+      adhome.command.infohome: true
+      adhome.command.reload: true  # add
+      adhome.bypass.whitelist-world: true  # add
+      adhome.notify.update: true  # added v1.2.0
+      adhome.limit.*: true  # added v1.3.0
+
+  # group (default, limits 5 example)
+  adhome.group.default-limit-5:
+    children:
+      adhome.command.home: true
+      adhome.command.sethome: true
+      adhome.command.deletehome: true
+      adhome.command.listhome: true
+      adhome.command.infohome: true
+      adhome.limit.5: true
+
+  # single
+  adhome.command.home: {}
+  adhome.command.sethome: {}
+  adhome.command.deletehome: {}
+  adhome.command.listhome: {}
+  adhome.command.infohome: {}
+  adhome.command.reload: {}
+  adhome.bypass.whitelist-world: {}
+  adhome.notify.update: {}
+  adhome.limit.*: {}

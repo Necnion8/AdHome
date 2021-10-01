@@ -1,0 +1,26 @@
+versions:
+  1.1.0-snapshot: |-
+    クリックやマウスホバーによるコマンド補足ができるように。(Spigot 1.9以降のみ)
+    タブコンプリートで簡単にホームへテレポートが可能に。
+    一定の間隔でホームを自動セーブするように。
+    ワールドホワイトリスト機能を実装。
+    ワールドに表示名を設定できるように。
+    ファイルエンコーディングはUTF-8を強制します。
+  1.2.0: |-
+    updated: 2019/11/14
+    added AdHomeAPI
+    MultiverseCoreからワールドの別名を取得します。(設定を追加)
+    アップデートチェッカーが追加されました。(設定と通知権限の追加)
+    タブコンプリートでNullPointerExceptionの修正
+    クリックとマウスホバーメッセージは、1.10から1.14のみ表示されます。
+  1.2.1: |-
+    updated: 2021/01/17
+    Tab complete fix
+    Support clickable messages in Spigot 1.7 and above
+    Add MetricsLite
+  1.3.0: |-
+    updated: 2021/09/30
+    Add sethomes limit permissions (adhome.limit.(int))
+    Add hook: WorldDisplayName, LOWorldRegenerator
+    Bugfix Tab-complete NPE (in default home)
+

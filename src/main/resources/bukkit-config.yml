@@ -1,0 +1,39 @@
+config-version: 1
+command-prefix: "&7[&aAdHome&7] "
+version-check: true
+use-clickable-message: true
+use-multiverse-core: true
+use-worlddisplayname: true
+use-lo-worldregenerator: true
+auto-save-time-minutes: 15
+whitelist-world:
+  set-home: all
+  teleport-home: all
+world-name: {}
+message:
+  home-teleport:
+    no-name: "&7{home}にテレポートしました。"
+    name: "&7{home}にテレポートしました。"
+    unavailable-world: "&c{world}が存在しません。"
+  home-set:
+    no-name: "&6{home}をセットしました！"
+    name: "&e{home}&6をセットしました！"
+    already-exists: "&cこのホーム名は既に使われています。"
+    contains-space: "&cホーム名に空白文字は使用できません。"
+    limited-homes: "&cセットホームの上限に達しました！"
+  home-delete:
+    no-name: "&6{home}を削除しました。"
+    name: "&e{home}&6を削除しました。"
+  home-list:
+    display: "&6ホーム一覧： "
+    entry-color: "&e"
+    none: "&7セットされているホームがありません。"
+  home-info:
+    display: "&7ホーム情報： "
+    line: "&6{home}\n&7( X: &e{x}&7, Y: &e{y}&7, Z: &e{z}&7, &e{not-found}{world}&7 )"
+    not-found: "&c&o"
+  others:
+    not-exists: "&cセットされていません。"
+    permission-error: "&cこのコマンドは実行できません。"
+    not-allowed-world: "&cこのワールドでは実行できません。"
+    default-home: "デフォルトホーム"
