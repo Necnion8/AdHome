@@ -38,21 +38,7 @@ public class DataStore extends BukkitConfigDriver {
     }
 
     MyHome getHome(Player player, String name) {
-        String path;
-        if (name != null) {
-            path = player.getUniqueId() + ".named." + name;
-        } else {
-            path = player.getUniqueId() + ".default";
-        }
-        String homeData = config.getString(path);
-        if ((homeData != null) && (!homeData.isEmpty())) {
-            try {
-                return MyHome.deserialize(name, homeData);
-            } catch (DeserializeException e) {
-                logger.severe("MyHomeデータを生成できませんでした。(uuid: " + player.getUniqueId() + ", home: " + name + ")");
-            }
-        }
-        return null;
+        return getHome(player.getUniqueId(), name);
     }
 
     MyHome getHome(UUID player, String name) {
@@ -74,25 +60,11 @@ public class DataStore extends BukkitConfigDriver {
     }
 
     void setHome(Player player, MyHome home) {
-        String path;
-        if (home.getName() != null) {
-            path = player.getUniqueId() + ".named." + home.getName();
-        } else {
-            path = player.getUniqueId() + ".default";
-        }
-        config.set(path, home.serialize());
-        modified = true;
+        setHome(player.getUniqueId(), home);
     }
 
     void setHome(UUID player, MyHome home) {
-        String path;
-        if (home.getName() != null) {
-            path = player + ".named." + home.getName();
-        } else {
-            path = player + ".default";
-        }
-        config.set(path, home.serialize());
-        modified = true;
+        setHome(player.toString(), home);
     }
 
     private void setHome(String uuid, MyHome home) {
@@ -107,14 +79,7 @@ public class DataStore extends BukkitConfigDriver {
     }
 
     void deleteHome(Player player, String name) {
-        String path;
-        if (name != null) {
-            path = player.getUniqueId() + ".named." + name;
-        } else {
-            path = player.getUniqueId() + ".default";
-        }
-        config.set(path, null);
-        modified = true;
+        deleteHome(player.getUniqueId(), name);
     }
 
     void deleteHome(UUID player, String name) {
@@ -129,17 +94,7 @@ public class DataStore extends BukkitConfigDriver {
     }
 
     List<MyHome> getAllHomes(Player player) {
-        List<MyHome> homes = new ArrayList<>();
-        ConfigurationSection named = config.getConfigurationSection(player.getUniqueId() + ".named");
-        if (named != null) {
-            MyHome h;
-            for (String name : named.getKeys(false)) {
-                h = getHome(player, name);
-                if (h != null)
-                    homes.add(h);
-            }
-        }
-        return homes;
+        return getAllHomes(player.getUniqueId());
     }
 
     List<MyHome> getAllHomes(UUID player) {
@@ -157,12 +112,7 @@ public class DataStore extends BukkitConfigDriver {
     }
 
     Set<String> getAllHomeNames(Player player) {
-        ConfigurationSection named = config.getConfigurationSection(player.getUniqueId() + ".named");
-        if (named != null) {
-            return named.getKeys(false);
-        } else {
-            return new HashSet<>();
-        }
+        return getAllHomeNames(player.getUniqueId());
     }
 
     Set<String> getAllHomeNames(UUID player) {
