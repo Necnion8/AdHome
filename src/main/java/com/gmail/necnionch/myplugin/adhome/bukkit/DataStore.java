@@ -99,6 +99,11 @@ public class DataStore extends BukkitConfigDriver {
 
     List<MyHome> getAllHomes(UUID player) {
         List<MyHome> homes = new ArrayList<>();
+
+        MyHome defaultHome = getHome(player, null);
+        if (defaultHome != null)
+            homes.add(defaultHome);
+
         ConfigurationSection named = config.getConfigurationSection(player + ".named");
         if (named != null) {
             MyHome h;

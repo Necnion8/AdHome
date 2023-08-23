@@ -106,7 +106,7 @@ public class AdHomeAPI {
 
     public Set<MyHome> getAllHomes(Player player) {
         /**
-         * プレイヤーの全てのホームを取得します。
+         * プレイヤーのデフォルトホームを含む全てのホームを取得します。
          * 名前を取得する場合は、getAllHomeNamesを使用してください。速度面で有利です。
          * @param player プレイヤー
          */
@@ -115,7 +115,7 @@ public class AdHomeAPI {
 
     public Set<MyHome> getAllHomes(UUID player) {
         /**
-         * プレイヤーの全てのホームを取得します。
+         * プレイヤーのデフォルトホームを含む全てのホームを取得します。
          * 名前を取得する場合は、getAllHomeNamesを使用してください。速度面で有利です。
          * add: v1.3.0
          * @param player プレイヤー
