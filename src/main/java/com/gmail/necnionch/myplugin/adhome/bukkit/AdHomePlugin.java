@@ -4,7 +4,6 @@ import com.gmail.necnionch.myplugin.adhome.bukkit.hooks.WorldDisplayNameBridge;
 import com.gmail.necnionch.myplugin.adhome.bukkit.hooks.WorldRegenListener;
 import com.gmail.necnionch.myplugin.adhome.common.MetricsLite;
 import com.gmail.necnionch.myplugin.adhome.common.UpdateChecker;
-import com.gmail.necnionch.myplugin.adhome.common.Utils;
 import com.onarandombox.MultiverseCore.MultiverseCore;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
