@@ -23,4 +23,6 @@ versions:
     Add sethomes limit permissions (adhome.limit.(int))
     Add hook: WorldDisplayName, LOWorldRegenerator
     Bugfix Tab-complete NPE (in default home)
-
+  1.3.1: |-
+    updated: 2023/08/23
+    Bugfix AdHomeAPI.getAllHomes() does not contain default home
